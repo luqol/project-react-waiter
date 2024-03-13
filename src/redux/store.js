@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from "redux";
-import initialState from "./initialState";
+import initialState from './initialState';
 import tablesReducer from './tablesRedux';
 
 
