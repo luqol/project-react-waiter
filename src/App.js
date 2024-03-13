@@ -1,10 +1,16 @@
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/pages/Home/Home";
+import { Container } from "react-bootstrap";
+import Header from "./components/views/Header/Header";
 
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      dsds
-    </div>
+    <Container>
+      <Header />
+      <Routes>
+        <Route path="/" element={ <Home /> } />
+      </Routes>
+    </Container>
   );
 }
 
