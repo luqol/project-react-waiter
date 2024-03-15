@@ -3,9 +3,9 @@
     {
       "id": "1",
       "status": "Cleaning",
-      "peopleAmount": 0,
+      "peopleAmount": null,
       "maxPeopleAmount": 6,
-      "bill": 0
+      "bill": null
     },
     {
       "id": "2",
@@ -34,6 +34,20 @@
       "peopleAmount": 4,
       "maxPeopleAmount": 4,
       "bill": 16
+    },
+    {
+      "id": "qC5a7hYhA",
+      "status": "",
+      "peopleAmount": null,
+      "maxPeopleAmount": 4,
+      "bill": null
+    },
+    {
+      "id": "apxOXi-lr",
+      "status": "",
+      "peopleAmount": 0,
+      "maxPeopleAmount": 2,
+      "bill": null
     }
   ],
   "tableStatuses": [
