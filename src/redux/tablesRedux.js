@@ -16,8 +16,16 @@ export const updateTables = payload => ({type: UPDATE_TABLES, payload});
 export const fetchTables = () => {
   return (dispatch) => {
     fetch('http://localhost:3131/api/tables')
-      .then( res => res.json())
-        .then(tables => dispatch(updateTables(tables)))
+      .then( res => {
+        if (res.ok){
+          return res.json()
+        }
+          else {
+            console.log('error', res.status);
+          }
+      }
+    ).then(tables => dispatch(updateTables(tables)))
+        
   }
 };
 
@@ -33,7 +41,14 @@ export const editTableRequest = (newTable) =>{
     };
 
     fetch(`http://localhost:3131/api/tables/${newTable.id}`, option)
-       .then( dispatch( editTable(newTable)) );
+       .then( res =>{
+          if (res.ok){
+            return res.json()
+          } else{
+            console.log('error', res.status);
+          }
+        } 
+      ).then(dispatch( editTable(newTable)));
        
   }
 };
@@ -50,7 +65,15 @@ export const addTableRequest = (newTable) => {
     };
 
     fetch('http://localhost:3131/api/tables', option)
-      .then(dispatch(addTable(newTable)));
+    .then( res =>{
+      if (res.ok){
+        return res.json()
+      } else{
+        console.log('error', res.status);
+      }
+    } 
+  ).then(dispatch(addTable(newTable)));
+      
   }
 };
 
@@ -65,7 +88,14 @@ export const removeTableRequest = tableId => {
     };
 
     fetch(`http://localhost:3131/api/tables/${tableId}`, option)
-      .then( removeTable(tableId));
+    .then( res =>{
+        if (res.ok){
+          return res.json()
+        } else{
+          console.log('error', res.status);
+        }
+      } 
+    ).then( dispatch(removeTable(tableId)));
   }
 
 };
