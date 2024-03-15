@@ -34,20 +34,6 @@
       "peopleAmount": 4,
       "maxPeopleAmount": 4,
       "bill": 16
-    },
-    {
-      "id": "qC5a7hYhA",
-      "status": "",
-      "peopleAmount": null,
-      "maxPeopleAmount": 4,
-      "bill": null
-    },
-    {
-      "id": "apxOXi-lr",
-      "status": "",
-      "peopleAmount": 0,
-      "maxPeopleAmount": 2,
-      "bill": null
     }
   ],
   "tableStatuses": [
