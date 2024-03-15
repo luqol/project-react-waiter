@@ -1,4 +1,4 @@
-import { Row, Col, Nav, Button } from "react-bootstrap"
+import { Row, Col, Button } from "react-bootstrap"
 import { NavLink } from "react-router-dom";
 
 const HomeTableCard = ({id, status}) => {

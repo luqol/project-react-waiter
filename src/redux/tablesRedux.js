@@ -28,23 +28,20 @@ export const editTableRequest = (newTable) =>{
       },
       body: JSON.stringify(newTable)
     };
-    debugger
+
     fetch(`http://localhost:3131/api/tables/${newTable.id}`, option)
-      .then( () => {
-        dispatch( editTable(newTable))
-        console.log('test');
-      })
-      console.log('test po fetch');
+       .then( dispatch( editTable(newTable)) );
+       
   }
 };
 
 const tablesReducer = (statePart = [], action) => {
-
+  
     switch (action.type){
       case UPDATE_TABLES:
         return [...action.payload]
       case EDIT_TABLE:
-        return statePart.map( table => (table.id === action.payload.id ? {...table, ...action.payload} : table))
+        return statePart.map( table => (table.id === action.payload.id ? {...table, ...action.payload} : table)) 
       default:
         return statePart
     }

@@ -1,0 +1,26 @@
+
+form {
+    .select{
+        width: 150px;
+        display: inline-block;
+    }
+    
+    .inputPeople{
+        width: 60px;
+        display: inline-block;
+        text-align: center;
+    }
+    .inputBill{
+        width: 70px;
+        display: inline-block;
+        text-align: center;
+    }
+    label{
+        width: 60px;
+    }
+    
+}
+
+.isShowBill{
+    display: none;
+}

@@ -1,6 +1,6 @@
 import { Button, Form } from "react-bootstrap";
 import { useDispatch, useSelector} from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { editTableRequest, getTableById } from "../../../redux/tablesRedux";
 import { getAllStatuses } from "../../../redux/tableStatusesRedux";
 import style from './SingleTableForm.module.scss';
@@ -16,10 +16,10 @@ const SingleTableForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [status, setStatus] = useState(table.status);
-  const [peopleAmount, setPeopleAmount] = useState(table.peopleAmount);
-  const [maxPeopleAmount, setMaxPeopleAmount] = useState(table.maxPeopleAmount);
-  const [bill, setBill] = useState(table.bill);
+  const [status, setStatus] = useState(table.status || '');
+  const [peopleAmount, setPeopleAmount] = useState(table.peopleAmount || '');
+  const [maxPeopleAmount, setMaxPeopleAmount] = useState(table.maxPeopleAmount || '');
+  const [bill, setBill] = useState(table.bill || '');
   const [showBill, setShowBill] = useState(status === 'Busy');
 
   const selectChange = newStatus =>{
@@ -46,7 +46,8 @@ const SingleTableForm = () => {
     navigate('/');
   };
 
-  return(
+  if (!table) return <Navigate to='/' />
+  else return(
     <div>
       <h2>Table {id}</h2>
       <Form onSubmit={e => submitHandle(e)}>

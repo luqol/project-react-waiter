@@ -9,17 +9,17 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchTables } from "./redux/tablesRedux";
 import { fetchStatuses } from "./redux/tableStatusesRedux";
+import AddTable from "./components/pages/AddTable/AddTable";
 
 const App = () => {
   const dispatch = useDispatch();
-
+  
   useEffect( 
-    () => dispatch(fetchTables()) 
-  ,[dispatch] );
-
-  useEffect( 
-    () => dispatch(fetchStatuses()) 
-  ,[dispatch] );
+    () => {
+      dispatch(fetchTables());
+      dispatch(fetchStatuses());
+    }
+  ,[dispatch] ); 
 
   return (
     <Container>
@@ -28,6 +28,7 @@ const App = () => {
         <Route path="/" element={ <Home /> } />
         <Route path="/table/:id" element={ <SingleTable /> } />
         <Route path="/*" element={ <NotFound /> } />
+        <Route path="/addtable" element={ <AddTable /> } />
       </Routes>
       <Footer />
     </Container>

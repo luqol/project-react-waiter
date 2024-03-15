@@ -5,9 +5,8 @@ import HomeTableCard from "../../views/HomeTableCard/HomeTableCard";
 
 
 const HomeForm = () => {
-
-  const allTables = useSelector(getAllTables);
   
+  const allTables = useSelector(getAllTables);
   return(
     <Row className="flex-column">
         { allTables.map( table => <HomeTableCard key={table.id} id={table.id} status={table.status} /> ) }
