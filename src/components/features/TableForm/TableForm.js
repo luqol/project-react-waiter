@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import adjustAmountPeople from "../../../utils/adjustAmountPeople";
 import style from './TableForm.module.scss';
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 const TableForm = ({action, actionText, ...props}) => {
     const allStatuses = useSelector(getAllStatuses);
@@ -57,6 +58,11 @@ const TableForm = ({action, actionText, ...props}) => {
         <Button type="submit"  className="mt-2">{actionText}</Button>
       </Form>
   )
+};
+
+TableForm.propTypes = {
+  action: PropTypes.func.isRequired,
+  actionText: PropTypes.string.isRequired,
 };
 
 export default TableForm;

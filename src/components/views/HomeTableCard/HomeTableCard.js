@@ -1,5 +1,6 @@
 import { Row, Col, Button } from "react-bootstrap"
 import { NavLink } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const HomeTableCard = ({id, status, actionText, action}) => {
 
@@ -16,6 +17,13 @@ const HomeTableCard = ({id, status, actionText, action}) => {
     </Row>
     
   )
+};
+
+HomeTableCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  actionText: PropTypes.string.isRequired,
+  action: PropTypes.func.isRequired,
 };
 
 export default HomeTableCard;
