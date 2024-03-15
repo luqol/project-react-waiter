@@ -1,4 +1,4 @@
-
+import { API_URL } from "../config";
 
 //selectors
 export const getAllTables = state => state.tables;
@@ -15,7 +15,7 @@ const REMOVE_TABLE = createActionName('RENOVE_TABLE');
 export const updateTables = payload => ({type: UPDATE_TABLES, payload});
 export const fetchTables = () => {
   return (dispatch) => {
-    fetch('http://localhost:3131/api/tables')
+    fetch(`${API_URL}/tables`)
       .then( res => {
         if (res.ok){
           return res.json()
@@ -40,7 +40,7 @@ export const editTableRequest = (newTable) =>{
       body: JSON.stringify(newTable)
     };
 
-    fetch(`http://localhost:3131/api/tables/${newTable.id}`, option)
+    fetch(`${API_URL}/tables/${newTable.id}`, option)
        .then( res =>{
           if (res.ok){
             return res.json()
@@ -64,7 +64,7 @@ export const addTableRequest = (newTable) => {
       body: JSON.stringify(newTable)
     };
 
-    fetch('http://localhost:3131/api/tables', option)
+    fetch(`${API_URL}/tables`, option)
     .then( res =>{
       if (res.ok){
         return res.json()
@@ -87,7 +87,7 @@ export const removeTableRequest = tableId => {
       },
     };
 
-    fetch(`http://localhost:3131/api/tables/${tableId}`, option)
+    fetch(`${API_URL}/tables/${tableId}`, option)
     .then( res =>{
         if (res.ok){
           return res.json()
