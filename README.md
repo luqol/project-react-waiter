@@ -1,3 +1,6 @@
+# Description
+Aplikacja pozwalajaca dodawac, edytowac,  usuwac stoliki, 
+
 # Replit link
 https://26570648-dd7b-49cf-8eab-1937626e944e-00-1jhdn582a6ynm.riker.replit.dev/
 
